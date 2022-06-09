@@ -24,6 +24,7 @@ let job1 = 'programmer';
 let job2 = 'teacher';
 */
 
+/*
 let javaScriptIsFun = true;
 console.log(javaScriptIsFun);
 
@@ -43,3 +44,4 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
+*/
