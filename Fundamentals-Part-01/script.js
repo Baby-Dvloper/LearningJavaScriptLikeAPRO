@@ -45,3 +45,12 @@ console.log(typeof year);
 
 console.log(typeof null);
 */
+
+let age = 39;
+age = 31;
+
+const birthYear = 1991;
+// birthYear = 1990;
+
+var lastName = 'Corona';
+console.log(lastName);
