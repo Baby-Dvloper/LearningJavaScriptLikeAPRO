@@ -22,9 +22,8 @@ let muCurrentJob = 'Teacher';
 
 let job1 = 'programmer';
 let job2 = 'teacher';
-*/
 
-/*
+
 let javaScriptIsFun = true;
 console.log(javaScriptIsFun);
 
@@ -44,9 +43,9 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
-*/
 
-/*
+
+
 let age = 39;
 age = 31;
 
@@ -56,7 +55,7 @@ const birthYear = 1991;
 var lastName = 'Corona';
 console.log(lastName);
 
-*/
+
 
 //Math Operators
 const now = 2037
@@ -86,3 +85,5 @@ console.log(ageSarah >= 18);
 
 const isFullAge = ageSarah >= 18;
 console.log(now - 1991 > now - 2018);
+
+*/
