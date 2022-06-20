@@ -107,7 +107,7 @@ console.log(x, y);
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
 
-*/
+
 
 const firstName = 'Jonas';
 const job = 'teacher';
@@ -127,3 +127,5 @@ console.log('String with \n\ multiple \n\ lines');
 console.log(`String
 multiple
 lines`);
+
+*/
