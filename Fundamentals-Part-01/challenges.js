@@ -82,7 +82,7 @@ TEST DATA:
 * Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 * Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 
-*/
+
 
 // const dolphinsScore_1 = 96;
 // const dolphinsScore_2 = 108;
@@ -108,25 +108,27 @@ TEST DATA:
  
 
 // ##############################
-// const dolphinsScore_1 = 97;
-// const dolphinsScore_2 = 112;
-// const dolphinsScore_3 = 101;
+const dolphinsScore_1 = 97;
+const dolphinsScore_2 = 112;
+const dolphinsScore_3 = 101;
 
-// const koalasScore_1= 109;
-// const koalasScore_2= 95;
-// const koalasScore_3= 106;
+const koalasScore_1= 109;
+const koalasScore_2= 95;
+const koalasScore_3= 106;
 
-// const averageScoreDolphins = (dolphinsScore_1 + dolphinsScore_2 +dolphinsScore_3) / 3;
-// const averageScoreKoalas = (koalasScore_1 + koalasScore_2 + koalasScore_3) / 3;
+const averageScoreDolphins = (dolphinsScore_1 + dolphinsScore_2 +dolphinsScore_3) / 3;
+const averageScoreKoalas = (koalasScore_1 + koalasScore_2 + koalasScore_3) / 3;
 
-// console.log(`Koalas :${averageScoreKoalas}`, `Dolphins :${averageScoreDolphins}`);
+console.log(`Koalas :${averageScoreKoalas}`, `Dolphins :${averageScoreDolphins}`);
 
-// if(averageScoreKoalas < averageScoreDolphins && averageScoreDolphins >= 100) {
-//   console.log('Dolphins wins the competition');
-// } else if (averageScoreKoalas > averageScoreDolphins && averageScoreKoalas >= 100){
-//   console.log('Koalas wins the competition');
-// } else if(averageScoreKoalas === averageScoreDolphins && averageScoreDolphins >= 100){
-//   console.log('There is a draw');
-// } else {
-//   console.log('No one wins the trophy');
-// }
+if(averageScoreKoalas < averageScoreDolphins && averageScoreDolphins >= 100) {
+  console.log('Dolphins wins the competition');
+} else if (averageScoreKoalas > averageScoreDolphins && averageScoreKoalas >= 100){
+  console.log('Koalas wins the competition');
+} else if(averageScoreKoalas === averageScoreDolphins && averageScoreDolphins >= 100){
+  console.log('There is a draw');
+} else {
+  console.log('No one wins the trophy');
+}
+
+*/
