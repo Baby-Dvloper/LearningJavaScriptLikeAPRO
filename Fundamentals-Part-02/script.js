@@ -5,7 +5,7 @@ const passTest = true;
 
 if (passTest) hasDriversLicense = true;
 if(hasDriversLicense) console.log('I   can drive :D');
-*/
+
 
 function logger() { //function body
 	console.log('My name is Fernando');
@@ -27,3 +27,23 @@ console.log(appleJuice);
 
 const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
+*/
+
+// Function declaration
+
+const age1 = calcAge1(1991);
+
+function calcAge1 (birthYear) {
+	return 2037 - birthYear;
+}
+
+
+// Function expression
+
+const calAge2 = function (birthYear) {
+	return 2037 - birthYear;
+}
+const age2 = calAge2(1991);
+
+console.log(age1, age2);
+
