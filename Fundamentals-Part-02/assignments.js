@@ -44,3 +44,12 @@ const newZealandpopulation2 = percentageOfWorld2(5);
 const uzbekistanpopulation2 = percentageOfWorld2(34);
 
 console.log(mexicopopulation2, newZealandpopulation2, uzbekistanpopulation2);
+
+// ########## Lecture: Arrow Functions
+/*Recreate the las assignmnet, but this time create an arrow function called 'percentageOfWorld3' */
+
+const percentageOfWorld3 = population => population / 7900 * 100;
+const mexicopopulation3 = percentageOfWorld3(129);
+const newZealandpopulation3 = percentageOfWorld3(5);
+const uzbekistanpopulation3 = percentageOfWorld3(34);
+console.log(mexicopopulation3, newZealandpopulation3, uzbekistanpopulation3);
