@@ -42,3 +42,13 @@ const percentageWorldNewZealand = percentageOfWorld3(5.1);
 const percentageWorldVietnam = percentageOfWorld3(98);
 
 console.log(percentageWorldNigeria, percentageWorldNewZealand, percentageWorldVietnam);
+
+// ################# Lecture: Fucntions Calling Other funtions
+
+const describePopulation = function(country, population) {
+  return `${country} has ${population} million people, which is about ${percentageOfWorld1(population)} of the world.`
+}
+
+console.log(describePopulation('Venezuela', 28.7));
+console.log(describePopulation('Japon', 125.7));
+console.log(describePopulation('Netherlands', 17.5));
