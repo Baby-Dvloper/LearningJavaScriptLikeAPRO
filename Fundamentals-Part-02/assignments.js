@@ -52,3 +52,12 @@ const describePopulation = function(country, population) {
 console.log(describePopulation('Venezuela', 28.7));
 console.log(describePopulation('Japon', 125.7));
 console.log(describePopulation('Netherlands', 17.5));
+
+// ################## Lecture: Introdcution to Arrays
+
+const populations = [5.1, 211.4, 98, 125.7];
+console.log(`The Array population has 4 elements: ${populations.length === 4}`);
+
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
+
+console.log(percentages);
