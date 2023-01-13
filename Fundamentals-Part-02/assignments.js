@@ -61,3 +61,19 @@ console.log(`The Array population has 4 elements: ${populations.length === 4}`);
 const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
 
 console.log(percentages);
+
+// ################## Lecture: Basic Array Operations (Methods)
+
+const neighboursNetherlands = ['Belgium', 'Germany', 'United Kingdom', 'France'];
+neighboursNetherlands.push('Utopia');
+
+neighboursNetherlands.pop();
+
+if (!neighboursNetherlands.includes('Germany')) {
+  console.log('Probably not a central European country 😀');
+}
+
+console.log(neighboursNetherlands);
+neighboursNetherlands[neighboursNetherlands.indexOf('France')] = 'Cheese Country';
+
+console.log(neighboursNetherlands);
