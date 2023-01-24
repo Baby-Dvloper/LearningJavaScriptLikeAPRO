@@ -77,3 +77,13 @@ console.log(neighboursNetherlands);
 neighboursNetherlands[neighboursNetherlands.indexOf('France')] = 'Cheese Country';
 
 console.log(neighboursNetherlands);
+
+// ################## Lecture: Introduction to Objects
+
+const myCountry = {
+  country: 'China',
+  capital: 'Beijing',
+  language: 'Mandarin',
+  population: 1412,
+  neighbours: ['Afghanistan', 'Bhutan', 'India', 'Kazakhstan', 'North Korea', 'Kyrgyztan', 'Laos', 'Mongolia', 'Nepal', 'Pakistan', 'Russia', 'Vietnam']
+}
