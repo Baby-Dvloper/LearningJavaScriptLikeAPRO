@@ -87,3 +87,14 @@ const myCountry = {
   population: 1412,
   neighbours: ['Afghanistan', 'Bhutan', 'India', 'Kazakhstan', 'North Korea', 'Kyrgyztan', 'Laos', 'Mongolia', 'Nepal', 'Pakistan', 'Russia', 'Vietnam']
 };
+
+// ################# Lecture: Dot vs. Bracket notation
+
+console.log(`${myCountry.country} has ${myCountry.population} million finish-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`);
+
+// myCountry.population = myCountry.population + 2;
+myCountry.population += 2;
+console.log(myCountry.population);
+// myCountry['population'] = myCountry['population'] - 2;
+myCountry['population'] -= 2;
+console.log(myCountry['population']);
