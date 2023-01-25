@@ -86,4 +86,4 @@ const myCountry = {
   language: 'Mandarin',
   population: 1412,
   neighbours: ['Afghanistan', 'Bhutan', 'India', 'Kazakhstan', 'North Korea', 'Kyrgyztan', 'Laos', 'Mongolia', 'Nepal', 'Pakistan', 'Russia', 'Vietnam']
-}
+};
