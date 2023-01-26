@@ -197,6 +197,9 @@ const jonas = {
 };
 */
 
+/*################ Dot vs. Bracket Notation*/
+
+/*
 const jonas = {
 	firstName: 'Jonas',
 	lastName: 'Schmedtmann',
@@ -226,4 +229,45 @@ jonas['twitter'] = '@jonasschmedtman';
 console.log(jonas);
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+*/
+
+/*################## Object Methods */
+
+const jonas = {
+	firstName: 'Jonas',
+	lastName: 'Schmedtmann',
+	birthYear: 1991,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Steven'],
+	hasDriversLicense: true,
+	// calcAge: function(birthYear) {
+	// 	return 2037 - birthYear;
+	// }
+
+	// calcAge: function() {
+	// 	// console.log(this);
+	// 	return 2037 - this.birthYear;
+	// }
+
+	calcAge: function() {
+		this.age = 2037 - this.birthYear;
+		return this.age;
+	},
+
+	//Challenge:
+	getSummary: function() {
+			// return this.hasDriversLicense ? `${this.firstName} is a ${this.calcAge()}-years old ${this.job}, and he has a driver's license` : `${this.firstName} is a ${this.age}-years old ${this.job}, and he has NO driver's license`;
+			return `${this.firstName} is a ${this.calcAge()}-years old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
+	}
+};
+
+console.log(jonas.calcAge());
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.getSummary());
+// console.log(jonas['calcAge'](1991));
+
+// Challenge
+// "Jonas is a 40-years old teacher, and he has a driver's license"
 
