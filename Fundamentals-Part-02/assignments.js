@@ -85,7 +85,14 @@ const myCountry = {
   capital: 'Beijing',
   language: 'Mandarin',
   population: 1412,
-  neighbours: ['Afghanistan', 'Bhutan', 'India', 'Kazakhstan', 'North Korea', 'Kyrgyztan', 'Laos', 'Mongolia', 'Nepal', 'Pakistan', 'Russia', 'Vietnam']
+  neighbours: ['Afghanistan', 'Bhutan', 'India', 'Kazakhstan', 'North Korea', 'Kyrgyztan', 'Laos', 'Mongolia', 'Nepal', 'Pakistan', 'Russia', 'Vietnam'],
+
+  describe: function(){
+    console.log(`${this.country} has ${this.population} million finish-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`)
+  },
+  checkIsland: function(){
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+  }
 };
 
 // ################# Lecture: Dot vs. Bracket notation
@@ -98,3 +105,11 @@ console.log(myCountry.population);
 // myCountry['population'] = myCountry['population'] - 2;
 myCountry['population'] -= 2;
 console.log(myCountry['population']);
+
+
+
+// ################## Lecture: Object Methods
+
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry);
