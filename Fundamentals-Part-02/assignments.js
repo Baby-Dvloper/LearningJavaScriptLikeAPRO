@@ -131,3 +131,26 @@ for(let i = 0; i < populations.length; i++) {
 }
 
 console.log(percentages2);
+
+// ##################### Lecture: Looping Backwards and Loops in Loops
+
+const listOfNeighbours = [
+  ['Canada', 'Mexico'],
+  ['Spain'],
+  ['Norway', 'Sweden', 'Russia'] 
+];
+
+// for(let i = 0; i < listOfNeighbours.length; i++) {
+//   console.log(`------ array number ${i}`);
+//   const actualElement = listOfNeighbours[i];
+//   for(let country = 0; country < actualElement.length; country++) {
+//     console.log(`Neighbour: ${actualElement[country]}`);
+//   }
+// }
+
+
+for(let i = 0; i < listOfNeighbours.length; i++) {
+  for(let y = 0; y < listOfNeighbours[i].length; y++) {
+    console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+  }
+}
