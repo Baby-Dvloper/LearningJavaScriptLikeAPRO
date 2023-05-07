@@ -18,10 +18,18 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
   //let currentScore = Number(document.querySelector('.score').textContent); //Codigo prueba - sin crear una varaible pero usando html
+
+  //When there is no input
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No number!';
+
+    //When the player wins
   } else if (secretNumber === guess) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+
+    //When guess is too high
   } else if (secretNumber < guess) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Too high!';
@@ -32,6 +40,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
     //document.querySelector('.score').textContent = currentScore -= 1; //Codigo prueba
+
+    //When guess is too low
   } else if (secretNumber > guess) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📉 Too low!';
