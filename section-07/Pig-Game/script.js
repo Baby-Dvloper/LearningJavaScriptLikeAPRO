@@ -35,12 +35,9 @@ btnRoll.addEventListener('click', function () {
     currentScore += dice;
     document.getElementById(`current--${activePlayer}`).textContent = currentScore;
   } else {
-    // document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     // Switch to the next player
-    // document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     activePlayer = activePlayer ? 0 : 1;
-    // document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
     currentScore = 0;
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('plaver--active');
