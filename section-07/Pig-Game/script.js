@@ -13,14 +13,25 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 // Starting conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
-
 const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+let currentScore;
+let activePlayer;
+let playing;
+
+const setDefaultStyles = function () {
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  diceEl.classList.add('hidden');
+};
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -30,6 +41,7 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
+setDefaultStyles();
 // Rolling dice functionality
 btnRoll.addEventListener('click', function () {
   if (playing) {
@@ -70,4 +82,21 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+btnNew.addEventListener('click', function () {
+  // reset player score
+  scores[0] = 0;
+  scores[1] = 0;
+
+  //reset default styles
+  setDefaultStyles();
+  //if no one wins
+  if (document.querySelector('.player--winner')) {
+    document.querySelector('.player--winner').classList.remove('player--winner');
+  }
+  // document.querySelector('.player--active').classList.remove('player--active');
+  // player0El.classList.add('player--active');
+  // current0El.textContent = 0;
+  // current1El.textContent = 0;
 });
