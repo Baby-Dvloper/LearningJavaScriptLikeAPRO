@@ -12,20 +12,6 @@ const restaurant = {
 	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
 	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-	order: function (starterIndex, mainIndex) {
-		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-	},
-
-	orderDelivery: function ({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-		console.log(
-			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-		);
-	},
-
-	orderPasta: function (ing1, ing2, ing3) {
-		console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-	},
-
 	openingHours: {
 		thu: {
 			open: 12,
@@ -40,7 +26,78 @@ const restaurant = {
 			close: 24,
 		},
 	},
+
+	order: function (starterIndex, mainIndex) {
+		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+	},
+
+	orderDelivery: function ({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+		console.log(
+			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+		);
+	},
+
+	orderPasta: function (ing1, ing2, ing3) {
+		console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+	},
+
+	orderPizza: function (mainIngredient, ...otherIngredients) {
+		console.log(mainIngredient);
+		console.log(otherIngredients);
+		console.log(
+			`Here is your delicious pizza with ${mainIngredient}${
+				otherIngredients.length > 0
+					? (function () {
+							let string = '';
+							for (let i = 0; i < otherIngredients.length; i++) {
+								if (i === otherIngredients.length - 1) {
+									string += ` and ${otherIngredients[i]}.`;
+									break;
+								}
+								string += ', ' + otherIngredients[i];
+							}
+							return string;
+					  })()
+					: '.'
+			}`
+		);
+	},
 };
+
+//Spread, because on Right side of =
+const arr = [1, 2, ...[3, 4]];
+
+// Rest, because on Left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// Functions
+const add = function (...numbers) {
+	let sum = 0;
+	for (const number of numbers) {
+		sum += number;
+	}
+	console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+// The Spread Operator
+// #############################################################
+/*
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -85,6 +142,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+*/
 // #####################################################
 /*
 const { name, openingHours, categories } = restaurant;
