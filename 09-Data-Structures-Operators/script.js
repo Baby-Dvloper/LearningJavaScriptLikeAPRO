@@ -64,6 +64,14 @@ const restaurant = {
 	},
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+for (const [index, item] of menu.entries()) console.log(`${index + 1}:  ${item}`);
+// console.log([...menu.entries()]);
+
+/*
+// ##########################################
+// Logical assignment operators
 const rest1 = {
 	name: 'Capri',
 	// numGuests: 20,
@@ -93,7 +101,7 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
-
+*/
 /*
 // ##################################################
 // The Nullish Coalescing operator
