@@ -70,6 +70,32 @@ const restaurant = {
 	},
 };
 
+// property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+	openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+// property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire Object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+	console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+/*
+// ########################################################
+// Optional Chaining
 if (restaurant.openingHours && restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
 // console.log(restaurant.openingHours.mon.open);
@@ -100,6 +126,7 @@ console.log(user[0]?.name ?? 'User array empty');
 
 if (user.length > 0) console.log(user[0].name);
 else console.log('User array empty');
+*/
 /*
 // ##############################################
 // The for-of Loop
