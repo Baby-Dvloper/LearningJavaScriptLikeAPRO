@@ -81,3 +81,36 @@ console.log(draw);
 printGoals('Davies', 'Muller', 'Lewandowski', 'Davies');
 printGoals(...game.scored);
 // #############################################
+// Challenge #2
+// 1
+for (const [index, name] of game.scored.entries()) {
+	console.log(`Goal ${index + 1}: ${name}`);
+}
+
+// 2
+let sum = 0;
+const odds = Object.values(game.odds);
+
+for (const value of odds) {
+	console.log(value);
+	sum += value;
+}
+
+console.log(sum / odds.length);
+
+// 3
+for (const [key, value] of Object.entries(game.odds)) {
+	console.log(typeof key, value);
+	if (game[key]) {
+		console.log(`Odd of victory ${game[key]}: ${value}`);
+	} else console.log(`Odd of draw: ${value}`);
+}
+
+// 4
+const scorers = {};
+for (const namePlayer of game.scored) {
+	console.log(namePlayer);
+	(scorers[namePlayer] && scorers[namePlayer]++) || (scorers[namePlayer] = 1);
+}
+
+console.log(scorers);
