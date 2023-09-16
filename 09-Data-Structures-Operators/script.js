@@ -7,77 +7,79 @@
 // Data needed for first part of the section
 const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
-	[weekDays[3]]: {
-		open: 12,
-		close: 22,
-	},
-	[weekDays[4]]: {
-		open: 11,
-		close: 23,
-	},
-	// [`day-${2 + 4}`]: {
-	// 	open: 0, // Open 24 hours
-	// 	close: 24,
-	// },
-	[weekDays[5]]: {
-		open: 0, // Open 24 hours
-		close: 24,
-	},
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekDays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  // [`day-${2 + 4}`]: {
+  // 	open: 0, // Open 24 hours
+  // 	close: 24,
+  // },
+  [weekDays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
 };
 const restaurant = {
-	name: 'Classico Italiano',
-	location: 'Via Angelo Tavanti 23, Firenze, Italy',
-	categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-	// ES& enhanced object literals
-	openingHours,
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  // ES& enhanced object literals
+  openingHours,
 
-	order(starterIndex, mainIndex) {
-		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-	},
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
-	orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-		console.log(
-			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-		);
-	},
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 
-	orderPasta(ing1, ing2, ing3) {
-		console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-	},
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 
-	orderPizza(mainIngredient, ...otherIngredients) {
-		console.log(mainIngredient);
-		console.log(otherIngredients);
-		console.log(
-			`Here is your delicious pizza with ${mainIngredient}${
-				otherIngredients.length > 0
-					? (function () {
-							let string = '';
-							for (let i = 0; i < otherIngredients.length; i++) {
-								if (i === otherIngredients.length - 1) {
-									string += ` and ${otherIngredients[i]}.`;
-									break;
-								}
-								string += ', ' + otherIngredients[i];
-							}
-							return string;
-					  })()
-					: '.'
-			}`
-		);
-	},
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+    console.log(
+      `Here is your delicious pizza with ${mainIngredient}${
+        otherIngredients.length > 0
+          ? (function () {
+              let string = '';
+              for (let i = 0; i < otherIngredients.length; i++) {
+                if (i === otherIngredients.length - 1) {
+                  string += ` and ${otherIngredients[i]}.`;
+                  break;
+                }
+                string += ', ' + otherIngredients[i];
+              }
+              return string;
+            })()
+          : '.'
+      }`
+    );
+  },
 };
 
+// ########################################
+// Maps: Iteration
 const question = new Map([
-	['question', 'What is the best programming language in th world?'],
-	[1, 'C'],
-	[2, 'Java'],
-	[3, 'JavaScript'],
-	['correct', 3],
-	[true, 'Correct 🎉'],
-	[false, 'Try again!'],
+  ['question', 'What is the best programming language in th world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again!'],
 ]);
 
 console.log(question);
@@ -90,9 +92,9 @@ console.log(hoursMap);
 // Quiz app
 console.log(question.get('question'));
 for (const [key, value] of question) {
-	if (typeof key === 'number') {
-		console.log(`Answer ${key}: ${value}`);
-	}
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
 }
 
 // const answer = Number(prompt('Your answer'));
