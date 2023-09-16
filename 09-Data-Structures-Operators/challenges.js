@@ -156,7 +156,7 @@ console.log(
   `An event happened, on average, every ${90 / gameEvents.size} minutes`
 );
 
-const time = [...gameEvents.keys()].pop(); // ¿es un iterable? y no tiene pop?
+const time = [...gameEvents.keys()].pop();
 console.log(
   `An event happened, on average, every ${time / gameEvents.size} minutes`
 );
