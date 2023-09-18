@@ -69,6 +69,84 @@ const restaurant = {
     );
   },
 };
+
+const airline = 'TAP Air Portugal';
+console.log(airline.toLowerCase());
+console.log('jonas'.toUpperCase());
+
+// Fix Capitalization in name
+const passenger = 'jOnas'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passengerLower.slice(0, -(passenger.length - 1)).toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+function correctName(passengerFullName) {
+  const passengerLower = passengerFullName.toLowerCase();
+  let newString = '';
+  for (let i = 0; i < passengerLower.length; i++) {
+    if (!(passengerLower[i] === ' ' && passengerLower[i - 1] === ' ')) {
+      if (passengerLower[i - 1] === ' ' || !i) {
+        const capitalizeLetter = passengerLower[i].toUpperCase();
+        newString += capitalizeLetter;
+      } else {
+        newString += passengerLower[i];
+      }
+    }
+  }
+  return newString.trim();
+}
+
+console.log(correctName('jonas schmedtmann'));
+console.log(correctName('cesar fernando corona morales'));
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimedEmail = lowerEmail.trim();
+console.log(trimedEmail);
+
+const nomarlizedEmail = loginEmail.toLowerCase().trim();
+console.log(nomarlizedEmail);
+console.log(email === nomarlizedEmail);
+
+// Replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = `All passengers come to boarding door 23. Boarding door 23!`;
+
+console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) console.log('You are NOT allowed on board');
+  else console.log('Welcome aboard');
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+/*
+// ######################################
+// Working with Strings - Part 1
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -103,6 +181,8 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+*/
+
 /*
 // ########################################
 // Maps: Iteration
