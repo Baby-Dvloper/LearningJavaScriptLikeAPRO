@@ -16,19 +16,7 @@ const game = {
       'Gnarby',
       'Lewandowski',
     ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
+    ['Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze'],
   ],
   score: '4:0',
   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
@@ -74,11 +62,7 @@ const printGoals = function (...players) {
   }
 
   for (let player in playerGoals) {
-    console.log(
-      `${player}: ${playerGoals[player]} ${
-        playerGoals[player] > 1 ? 'goals' : 'goal'
-      }`
-    );
+    console.log(`${player}: ${playerGoals[player]} ${playerGoals[player] > 1 ? 'goals' : 'goal'}`);
   }
   console.log(`${players.length} goals were scored`);
 };
@@ -152,19 +136,33 @@ const events = [...new Set(gameEvents.values())];
 gameEvents.delete(64);
 // 3
 
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`
-);
+console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`);
 
 const time = [...gameEvents.keys()].pop();
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+console.log(`An event happened, on average, every ${time / gameEvents.size} minutes`);
 
 // 4
 for (const [time, event] of gameEvents) {
-  console.log(
-    (time < 45 && `[FIRST HALF]${time}: ${event}`) ||
-      `[SECOND HALF]${time}: ${event}`
-  );
+  console.log((time < 45 && `[FIRST HALF]${time}: ${event}`) || `[SECOND HALF]${time}: ${event}`);
 }
+// #############################################
+// Challenge #4
+
+const convertToCamelCase = function (input) {
+  const inputLowerCase = input.toLowerCase().split('\n');
+  for (const [index, variable] of inputLowerCase.entries()) {
+    const arrNames = variable.split('_');
+    const arrCorrect = [];
+    for (const name of arrNames) arrCorrect.push(name.trim().replace(name[0], name[0].toUpperCase()));
+    console.log(`${arrCorrect.join('').padEnd(25, ' ')}${'✅'.repeat(index + 1)} \n`);
+  }
+};
+
+const textArea = document.createElement('textarea');
+document.body.append(textArea);
+const convertButton = document.createElement('button');
+document.body.append(convertButton);
+
+convertButton.addEventListener('click', function () {
+  convertToCamelCase(textArea.value);
+});
